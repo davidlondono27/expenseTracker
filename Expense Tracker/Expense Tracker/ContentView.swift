@@ -8,14 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("isFTU") private var isFTU: Bool = true
+    @State private var activeTab: Tab = .recents
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        TabView(selection: $activeTab) {
+            Text("Recents")
+                .tag(Tab.recents)
+                .tabItem { Tab.recents.tabContent }
+            Text("Search")
+                .tag(Tab.search)
+                .tabItem { Tab.search.tabContent }
+            Text("Chart")
+                .tag(Tab.charts)
+                .tabItem { Tab.charts.tabContent }
+            Text("Setting")
+                .tag(Tab.settings)
+                .tabItem { Tab.settings.tabContent }
         }
-        .padding()
+        .tint(appTint)
+        .sheet(isPresented: $isFTU) {
+            IntroScreen()
+                .interactiveDismissDisabled()
+        }
     }
 }
 

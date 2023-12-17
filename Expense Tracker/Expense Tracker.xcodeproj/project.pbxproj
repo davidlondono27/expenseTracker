@@ -11,6 +11,9 @@
 		1BE936672B2F6C28005B82E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE936662B2F6C28005B82E4 /* ContentView.swift */; };
 		1BE936692B2F6C29005B82E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BE936682B2F6C29005B82E4 /* Assets.xcassets */; };
 		1BE9366D2B2F6C29005B82E4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BE9366C2B2F6C29005B82E4 /* Preview Assets.xcassets */; };
+		1BE936762B2F6CAB005B82E4 /* IntroScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE936752B2F6CAB005B82E4 /* IntroScreen.swift */; };
+		1BE9367A2B2F6EA8005B82E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE936792B2F6EA8005B82E4 /* Constants.swift */; };
+		1BE9367D2B2F939C005B82E4 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE9367C2B2F939C005B82E4 /* Tab.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		1BE936682B2F6C29005B82E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BE9366A2B2F6C29005B82E4 /* Expense_Tracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Expense_Tracker.entitlements; sourceTree = "<group>"; };
 		1BE9366C2B2F6C29005B82E4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1BE936752B2F6CAB005B82E4 /* IntroScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroScreen.swift; sourceTree = "<group>"; };
+		1BE936792B2F6EA8005B82E4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1BE9367C2B2F939C005B82E4 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +58,11 @@
 		1BE936632B2F6C28005B82E4 /* Expense Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				1BE936642B2F6C28005B82E4 /* Expense_TrackerApp.swift */,
+				1BE936772B2F6E8E005B82E4 /* Resource */,
+				1BE936742B2F6C95005B82E4 /* Model */,
+				1BE936732B2F6C90005B82E4 /* View */,
 				1BE936662B2F6C28005B82E4 /* ContentView.swift */,
+				1BE936642B2F6C28005B82E4 /* Expense_TrackerApp.swift */,
 				1BE936682B2F6C29005B82E4 /* Assets.xcassets */,
 				1BE9366A2B2F6C29005B82E4 /* Expense_Tracker.entitlements */,
 				1BE9366B2B2F6C29005B82E4 /* Preview Content */,
@@ -67,6 +76,38 @@
 				1BE9366C2B2F6C29005B82E4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1BE936732B2F6C90005B82E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1BE936752B2F6CAB005B82E4 /* IntroScreen.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1BE936742B2F6C95005B82E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1BE9367C2B2F939C005B82E4 /* Tab.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1BE936772B2F6E8E005B82E4 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				1BE936782B2F6E95005B82E4 /* Constants */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		1BE936782B2F6E95005B82E4 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				1BE936792B2F6EA8005B82E4 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +181,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BE936672B2F6C28005B82E4 /* ContentView.swift in Sources */,
+				1BE936762B2F6CAB005B82E4 /* IntroScreen.swift in Sources */,
+				1BE9367D2B2F939C005B82E4 /* Tab.swift in Sources */,
 				1BE936652B2F6C28005B82E4 /* Expense_TrackerApp.swift in Sources */,
+				1BE9367A2B2F6EA8005B82E4 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +311,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Expense Tracker/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Mis Gastos";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -275,8 +321,7 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -303,6 +348,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Expense Tracker/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Mis Gastos";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -311,8 +358,7 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
