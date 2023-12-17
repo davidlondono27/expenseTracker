@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-let appTint: Color = .green
+let appTint: Color = .cyan
 
 class ConstantsText_ES {
     static let welcomeTextFTU = "Qué hay de nuevo en\nRastreador de Gastos"
@@ -23,6 +23,8 @@ class ConstantsText_ES {
     static let filtersText = "Filtros"
     static let chartsText = "Gráficas"
     static let settingsText = "Ajustes"
+    static let welcomeText = "Bienvenido!"
+    static let toTextDivider = "a"
 }
 
 class ConstantsText_EN {
@@ -38,4 +40,6 @@ class ConstantsText_EN {
     static let filtersText = "Filters"
     static let chartsText = "Charts"
     static let settingsText = "Settings"
+    static let welcomeText = "Welcome!"
+    static let toTextDivider = "to"
 }
