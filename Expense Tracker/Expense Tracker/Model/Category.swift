@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum Category: String {
-    case income = "Income"
-    case expense = "Expense"
+enum Category: String, CaseIterable {
+    case income = "Ingresos"
+    case expense = "Gastos"
 }
