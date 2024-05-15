@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-let appTint: Color = .indigo
+let appTint: Color = .mint
 
 class ConstantsText_ES {
     static let welcomeTextFTU = "Qué hay de nuevo en\nRastreador de Gastos"

@@ -11,6 +11,8 @@ struct Recents: View {
     @AppStorage("userName") private var userName: String = ""
     @State private var startDate: Date = .now.startOfMonth
     @State private var endDate: Date = .now.endOfMonth
+    @State private var selectedCategory: Category = .expense
+    @Namespace private var animation
     var body: some View {
         GeometryReader {
             let size = $0.size
@@ -25,10 +27,14 @@ struct Recents: View {
                                 Text("\(format(date: startDate, format: "dd - MMM yy")) \(ConstantsText_ES.to) \(format(date: endDate, format: "dd - MMM yy"))")
                                     .font(.caption2)
                                     .foregroundStyle(.gray)
-                            }
-                            .hSpacing(.leading)
-                            
+                            }.hSpacing(.leading)
                             CardView(income: 2039, expense: 4038)
+                            CustomSegmentedControl()
+                                .padding(.bottom, 10)
+                            ForEach(sampleTransactions.filter({ $0.category == selectedCategory.rawValue})) { transaction in
+                                TransactionCardView(transaction: transaction)
+                                    .padding(.horizontal, 15)
+                            }
                         } header: {
                             HeaderView(size)
                         }
@@ -85,6 +91,32 @@ struct Recents: View {
         }
     }
     
+    @ViewBuilder
+    func CustomSegmentedControl() -> some View {
+        HStack(spacing: 0) {
+            ForEach(Category.allCases, id: \.rawValue) { category in
+                Text(category.rawValue)
+                    .hSpacing()
+                    .padding(.vertical, 10)
+                    .background{
+                        if category == self.selectedCategory {
+                            Capsule()
+                                .fill(.background)
+                                .matchedGeometryEffect(id: "ACTIVETAB", in: animation)
+                        }
+                    }
+                    .contentShape(.capsule)
+                    .onTapGesture {
+                        withAnimation(.snappy) {
+                            selectedCategory = category
+                        }
+                    }
+            }
+        }
+        .background(.gray.opacity(0.15), in: .capsule)
+        .padding(.top, 5)
+    }
+    
     func headerBGOpacity(_ proxy: GeometryProxy) -> CGFloat {
         let minY = proxy.frame(in: .scrollView).minY + safeArea.top
         return minY > 0 ? 0 : (-minY / 15)
@@ -94,7 +126,7 @@ struct Recents: View {
         let minY = proxy.frame(in: .scrollView).minY
         let screenHeight = size.height
         let progress = minY / screenHeight
-        let scale = (min(max(progress, 0), 1)) * 0.6
+        let scale = (min(max(progress, 0), 1)) * 0.7
         
         return 1 + scale
     }
