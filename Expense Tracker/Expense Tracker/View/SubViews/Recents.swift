@@ -11,6 +11,7 @@ struct Recents: View {
     @AppStorage("userName") private var userName: String = ""
     @State private var startDate: Date = .now.startOfMonth
     @State private var endDate: Date = .now.endOfMonth
+    @State private var showFilterView: Bool = false
     @State private var selectedCategory: Category = .expense
     @Namespace private var animation
     var body: some View {
@@ -22,7 +23,7 @@ struct Recents: View {
                     LazyVStack(spacing: 10, pinnedViews: [.sectionHeaders]) {
                         Section {
                             Button {
-                                //TODO: Add func to select Date
+                                showFilterView = true
                             } label: {
                                 Text("\(format(date: startDate, format: "dd - MMM yy")) \(ConstantsText_ES.to) \(format(date: endDate, format: "dd - MMM yy"))")
                                     .font(.caption2)
@@ -42,7 +43,22 @@ struct Recents: View {
                     .padding(15)
                 }
                 .background(.gray.opacity(0.15))
+                .blur(radius: showFilterView ? 8 : 0)
+                .disabled(showFilterView)
             }
+            .overlay {
+                if showFilterView {
+                    DateFilterView(start: startDate, end: endDate, onSubmit: { start, end in
+                        startDate = start
+                        endDate = end
+                        showFilterView = false
+                    }, onClose: {
+                        showFilterView = false
+                    })
+                        .transition(.move(edge: .leading))
+                }
+            }
+            .animation(.snappy, value: showFilterView)
         }
     }
     
