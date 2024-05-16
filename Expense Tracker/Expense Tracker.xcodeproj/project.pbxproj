@@ -20,6 +20,7 @@
 		6F3E2BC42BF51830004B52E1 /* TransactionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3E2BC32BF51830004B52E1 /* TransactionCardView.swift */; };
 		6F3E2BC62BF52AE0004B52E1 /* SwipeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3E2BC52BF52AE0004B52E1 /* SwipeAction.swift */; };
 		6F3E2BC82BF57B38004B52E1 /* DateFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3E2BC72BF57B38004B52E1 /* DateFilterView.swift */; };
+		6F3E2BCC2BF5B515004B52E1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3E2BCB2BF5B515004B52E1 /* ViewModel.swift */; };
 		6F677DA32BF44E920003C2ED /* Recents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F677DA22BF44E920003C2ED /* Recents.swift */; };
 		6F677DA52BF44EA40003C2ED /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F677DA42BF44EA40003C2ED /* Search.swift */; };
 		6F677DA72BF44EB90003C2ED /* Graphs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F677DA62BF44EB90003C2ED /* Graphs.swift */; };
@@ -45,6 +46,8 @@
 		6F3E2BC32BF51830004B52E1 /* TransactionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCardView.swift; sourceTree = "<group>"; };
 		6F3E2BC52BF52AE0004B52E1 /* SwipeAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeAction.swift; sourceTree = "<group>"; };
 		6F3E2BC72BF57B38004B52E1 /* DateFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFilterView.swift; sourceTree = "<group>"; };
+		6F3E2BC92BF58B9C004B52E1 /* Expense-Tracker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Expense-Tracker-Info.plist"; sourceTree = SOURCE_ROOT; };
+		6F3E2BCB2BF5B515004B52E1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		6F677DA22BF44E920003C2ED /* Recents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recents.swift; sourceTree = "<group>"; };
 		6F677DA42BF44EA40003C2ED /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		6F677DA62BF44EB90003C2ED /* Graphs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graphs.swift; sourceTree = "<group>"; };
@@ -84,8 +87,10 @@
 		1BE936632B2F6C28005B82E4 /* Expense Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				6F3E2BC92BF58B9C004B52E1 /* Expense-Tracker-Info.plist */,
 				1BE936772B2F6E8E005B82E4 /* Resource */,
 				1BE936742B2F6C95005B82E4 /* Model */,
+				6F3E2BCA2BF5B500004B52E1 /* ViewModel */,
 				1BE936732B2F6C90005B82E4 /* View */,
 				1BE936662B2F6C28005B82E4 /* ContentView.swift */,
 				1BE936642B2F6C28005B82E4 /* Expense_TrackerApp.swift */,
@@ -141,6 +146,14 @@
 				6F677DAC2BF45E610003C2ED /* DateModifiers.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		6F3E2BCA2BF5B500004B52E1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6F3E2BCB2BF5B515004B52E1 /* ViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		6F677DA12BF44E6D0003C2ED /* SubViews */ = {
@@ -246,6 +259,7 @@
 				1BE9367D2B2F939C005B82E4 /* Tab.swift in Sources */,
 				6F677DAD2BF45E610003C2ED /* DateModifiers.swift in Sources */,
 				6F677DA92BF44EE40003C2ED /* Settings.swift in Sources */,
+				6F3E2BCC2BF5B515004B52E1 /* ViewModel.swift in Sources */,
 				1BE936652B2F6C28005B82E4 /* Expense_TrackerApp.swift in Sources */,
 				6F677DA52BF44EA40003C2ED /* Search.swift in Sources */,
 				1BE9367A2B2F6EA8005B82E4 /* Constants.swift in Sources */,
@@ -380,8 +394,10 @@
 				DEVELOPMENT_TEAM = KMY4B6CP23;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Expense-Tracker-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Mis Gastos";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Please authentic yourself to unlock App";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -419,8 +435,10 @@
 				DEVELOPMENT_TEAM = KMY4B6CP23;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Expense-Tracker-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Mis Gastos";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Please authentic yourself to unlock App";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
