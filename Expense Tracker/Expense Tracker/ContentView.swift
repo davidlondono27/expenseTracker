@@ -12,16 +12,16 @@ struct ContentView: View {
     @State private var activeTab: Tab = .recents
     var body: some View {
         TabView(selection: $activeTab) {
-            Text("Recents")
+            Recents()
                 .tag(Tab.recents)
                 .tabItem { Tab.recents.tabContent }
-            Text("Search")
+            Search()
                 .tag(Tab.search)
                 .tabItem { Tab.search.tabContent }
-            Text("Chart")
+            Graphs()
                 .tag(Tab.charts)
                 .tabItem { Tab.charts.tabContent }
-            Text("Setting")
+            Settings()
                 .tag(Tab.settings)
                 .tabItem { Tab.settings.tabContent }
         }
@@ -33,8 +33,6 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }
