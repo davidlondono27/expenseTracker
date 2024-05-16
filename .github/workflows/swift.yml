@@ -1,7 +1,7 @@
 # This workflow will build a Swift project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
 
-name: Swift
+name: Compiling and Testing iOS App
 
 on:
   push:
@@ -16,7 +16,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Build
-      run: swift build -v
-    - name: Run tests
-      run: swift test -v
+    - name: Set up Xcode
+      uses: actions/setup-xcode@v2
+      with:
+        xcode-version: '12.x' # Adjust the Xcode version as needed
+    - name: Build and Test
+      run: |
+        xcodebuild clean test -workspace "Expense Tracker.xcworkspace" -scheme "Expense Tracker" -destination "platform=iOS Simulator,name=iPhone 12" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO | xcpretty
