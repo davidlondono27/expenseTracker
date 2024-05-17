@@ -1,11 +1,12 @@
 //
-//  NewExpenseView.swift
+//  TransactionView.swift
 //  Expense Tracker
 //
 //  Created by David Londono on 15/05/24.
 //
 
 import SwiftUI
+import WidgetKit
 
 struct TransactionView: View {
     @Environment(\.modelContext) private var context
@@ -102,6 +103,7 @@ struct TransactionView: View {
             context.insert(transaction)
         }
         dismiss()
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
     @ViewBuilder
