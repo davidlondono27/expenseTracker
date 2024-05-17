@@ -32,6 +32,9 @@ struct TransactionView: View {
                                                        dateAdded: dateAdded,
                                                        category: category,
                                                        tintColor: tint))
+                .onTapGesture {
+                    hideKeyboard()
+                }
                 CustomSelection(ConstantsText_ES.title,
                                 ConstantsText_ES.tipTitle,
                                 value: $title)
@@ -47,7 +50,7 @@ struct TransactionView: View {
                         HStack(spacing: 4) {
                             Text(currencySymbol)
                                 .font(.callout.bold())
-                            TextField("$0.0", value: $amount, formatter: numberFormatter)
+                            TextField("0.0", value: $amount, formatter: numberFormatter)
                                 .keyboardType(.decimalPad)
                         }
                         .padding(.horizontal, 15)
@@ -56,6 +59,8 @@ struct TransactionView: View {
                         .frame(maxWidth: 130)
                         CategoryCheckBox()
                     }
+                }.onTapGesture {
+                    hideKeyboard()
                 }
                 VStack(alignment: .leading, spacing: 10) {
                     Text(ConstantsText_ES.date)
@@ -68,9 +73,21 @@ struct TransactionView: View {
                         .padding(.horizontal, 15)
                         .padding(.vertical, 12)
                         .background(.background, in: .rect(cornerRadius: 10))
+                        .onTapGesture {
+                            hideKeyboard()
+                        }
+                }
+                .onTapGesture {
+                    hideKeyboard()
                 }
             }
+            .onTapGesture {
+                hideKeyboard()
+            }
             .padding(15)
+        }
+        .onTapGesture {
+            hideKeyboard()
         }
         .navigationTitle("\(editTransaction == nil ? ConstantsText_ES.add : ConstantsText_ES.edit) \(ConstantsText_ES.transaction)")
         .background(.gray.opacity(0.15))
@@ -106,8 +123,13 @@ struct TransactionView: View {
             let transaction = Transaction(title: title, remarks: remarks, amount: amount, dateAdded: dateAdded, category: category, tintColor: tint)
             context.insert(transaction)
         }
-        dismiss()
         WidgetCenter.shared.reloadAllTimelines()
+        hideKeyboard()
+        dismiss()
+    }
+    
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
     
     @ViewBuilder

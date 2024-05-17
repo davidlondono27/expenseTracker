@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct SwipeAction<Content: View>: View {
     var cornerRadius: CGFloat = 0
@@ -88,6 +89,7 @@ struct SwipeAction<Content: View>: View {
                                 resetPosition()
                                 try? await Task.sleep(for: .seconds(0.25))
                                 button.action()
+                                WidgetCenter.shared.reloadAllTimelines()
                                 try? await Task.sleep(for: .seconds(0.1))
                                 isEnabled = true
                             }

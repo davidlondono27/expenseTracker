@@ -75,10 +75,10 @@ struct Recents: View {
     func HeaderView(_ size: CGSize) -> some View {
         HStack(spacing: 10) {
             VStack(alignment: .leading, spacing: 5) {
-                Text(ConstantsText_ES.welcome)
+                Text("\(ConstantsText_ES.welcome)\(userName.isEmpty ? "!" : "")")
                     .font(.title.bold())
                 if !userName.isEmpty {
-                    Text(userName)
+                    Text("\(userName)!")
                         .font(.callout)
                         .foregroundStyle(.gray)
                 }

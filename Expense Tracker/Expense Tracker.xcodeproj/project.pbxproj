@@ -45,6 +45,7 @@
 		6F677DAB2BF450BF0003C2ED /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F677DAA2BF450BF0003C2ED /* ViewModifiers.swift */; };
 		6F677DAD2BF45E610003C2ED /* DateModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F677DAC2BF45E610003C2ED /* DateModifiers.swift */; };
 		6F677DB02BF461B80003C2ED /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F677DAF2BF461B80003C2ED /* CardView.swift */; };
+		6FCC1E042BF7EB4E0011789F /* SwipeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3E2BC52BF52AE0004B52E1 /* SwipeAction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -403,6 +404,7 @@
 				6F21B9F92BF7080500618E70 /* StaticCardViewBundle.swift in Sources */,
 				6F21BA072BF7094D00618E70 /* DateModifiers.swift in Sources */,
 				6F21BA0D2BF70A1A00618E70 /* Constants.swift in Sources */,
+				6FCC1E042BF7EB4E0011789F /* SwipeAction.swift in Sources */,
 				6F21BA092BF7098E00618E70 /* CardView.swift in Sources */,
 				6F21BA062BF7092300618E70 /* FilterTransactionView.swift in Sources */,
 				6F21BA0C2BF70A0C00618E70 /* TintColor.swift in Sources */,

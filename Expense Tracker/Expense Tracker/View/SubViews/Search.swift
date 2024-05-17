@@ -32,6 +32,9 @@ struct Search: View {
             .overlay(content: {
                 ContentUnavailableView(ConstantsText_ES.searchTransactions, systemImage: "magnifyingglass")
                     .opacity(filterText.isEmpty ? 1 : 0)
+                    .onTapGesture {
+                        hideKeyboard()
+                    }
             })
             .onChange(of: searchText, { oldValue, newValue in
                 if newValue.isEmpty {
@@ -50,6 +53,9 @@ struct Search: View {
                     ToolBarContent()
                 }
             }
+        }
+        .onTapGesture {
+            hideKeyboard()
         }
     }
     
@@ -81,6 +87,10 @@ struct Search: View {
         } label: {
             Image(systemName: "slider.vertical.3")
         }
+    }
+    
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 

@@ -10,6 +10,16 @@ import SwiftUI
 
 let appTint: Color = .red //TODO: Add Color selector to Settings
 
+class customApp {
+    var color: Color
+    var language: String
+    
+    init(color: Color, language: String) {
+        self.color = color
+        self.language = language
+    }
+}
+
 class ConstantsText_ES {
     static let welcomeTextFTU = "Qué hay de nuevo en\nRastreador de Gastos"
     static let transactionTitle = "Transacciones"
@@ -23,7 +33,7 @@ class ConstantsText_ES {
     static let filtersText = "Filtros"
     static let chartsText = "Gráficas"
     static let settingsText = "Ajustes"
-    static let welcome = "Hola!"
+    static let welcome = "Hola"
     static let to = "a"
     static let income = "Ingresos"
     static let expense = "Gastos"
@@ -53,9 +63,10 @@ class ConstantsText_ES {
     static let save = "Guardar"
     static let tipTitle = "Hamburguesa y papas"
     static let tipRemark = "Restaurante BurgerMax"
-    static let graphs = "Graphs"
-    static let month = "Month"
-    static let category = "Category"
+    static let graphs = "Gráficos"
+    static let month = "Mes"
+    static let category = "Categoría"
+    static let yourMovements = "Detalles de"
 }
 
 class ConstantsText_EN {
@@ -101,4 +112,8 @@ class ConstantsText_EN {
     static let save = "Save"
     static let tipTitle = "Magic Keyboard"
     static let tipRemark = "Apple Store Product"
+    static let graphs = "Graphs"
+    static let month = "Month"
+    static let category = "Category"
+    static let yourMovements = "Details on"
 }

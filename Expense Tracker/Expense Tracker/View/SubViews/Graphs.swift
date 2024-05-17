@@ -21,10 +21,9 @@ struct Graphs: View {
                         .padding(10)
                         .padding(.top, 10)
                         .background(.background, in: .rect(cornerRadius: 10))
-                    
                     ForEach(chartGroups) { group in
                         VStack(alignment: .leading, spacing: 10) {
-                            Text(format(date: group.date, format: "MMMM yy")) //TODO: Add text "Tus ingresos/gastos" and MMMM
+                            Text(format(date: group.date, format: "MMMM yy"))
                                 .font(.caption)
                                 .foregroundStyle(.gray)
                                 .hSpacing(.leading)
@@ -162,7 +161,7 @@ struct ListOfExpenses: View {
             .padding(15)
         }
         .background(.gray.opacity(0.15))
-        .navigationTitle(format(date: month, format: "MMMM yy"))
+        .navigationTitle("\(ConstantsText_ES.yourMovements) \(format(date: month, format: "MMMM yy"))")
     }
 }
 

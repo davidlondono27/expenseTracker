@@ -26,6 +26,12 @@ struct ContentView: View {
                     .background(.blue)
                     .foregroundStyle(.white)
                     .clipShape(.capsule)
+                    .onAppear {
+                        Task {
+                            try? await Task.sleep(for: .seconds(0.75))
+                            authenticate()
+                        }
+                    }
             }
         } else {
             HomeApp()

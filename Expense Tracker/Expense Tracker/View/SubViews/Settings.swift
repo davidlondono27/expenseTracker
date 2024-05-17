@@ -27,7 +27,15 @@ struct Settings: View {
                 }
             }
             .navigationTitle(ConstantsText_ES.settings)
+            .onTapGesture {
+                hideKeyboard()
+            }
+        }.onTapGesture {
+            hideKeyboard()
         }
+    }
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 
