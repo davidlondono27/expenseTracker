@@ -24,7 +24,7 @@ struct Graphs: View {
                     
                     ForEach(chartGroups) { group in
                         VStack(alignment: .leading, spacing: 10) {
-                            Text(format(date: group.date, format: "MMM yy")) //TODO: Add text "Tus ingresos/gastos"
+                            Text(format(date: group.date, format: "MMM yy")) //TODO: Add text "Tus ingresos/gastos" and MMMM
                                 .font(.caption)
                                 .foregroundStyle(.gray)
                                 .hSpacing(.leading)
