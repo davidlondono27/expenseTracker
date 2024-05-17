@@ -22,20 +22,24 @@ struct TransactionView: View {
     var body: some View {
         ScrollView(.vertical) {
             VStack(spacing: 15) {
-                Text("Preview")
+                Text(ConstantsText_ES.preview)
                     .font(.caption)
                     .foregroundStyle(.gray)
                     .hSpacing(.leading)
-                TransactionCardView(transaction: .init(title: title.isEmpty ? "Title" : title,
-                                                       remarks: remarks.isEmpty ? "Remarks" : remarks,
+                TransactionCardView(transaction: .init(title: title.isEmpty ? ConstantsText_ES.title : title,
+                                                       remarks: remarks.isEmpty ? ConstantsText_ES.remarks : remarks,
                                                        amount: amount,
                                                        dateAdded: dateAdded,
                                                        category: category,
                                                        tintColor: tint))
-                CustomSelection("Title", "Magic Keyboard", value: $title)
-                CustomSelection("Remarks", "Apple Product", value: $remarks)
+                CustomSelection(ConstantsText_ES.title,
+                                ConstantsText_ES.tipTitle,
+                                value: $title)
+                CustomSelection(ConstantsText_ES.remarks,
+                                ConstantsText_ES.tipRemark,
+                                value: $remarks)
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("Amount & Category")
+                    Text(ConstantsText_ES.amountCategory)
                         .font(.caption)
                         .foregroundStyle(.gray)
                         .hSpacing(.leading)
@@ -54,7 +58,7 @@ struct TransactionView: View {
                     }
                 }
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("Date")
+                    Text(ConstantsText_ES.date)
                         .font(.caption)
                         .foregroundStyle(.gray)
                         .hSpacing(.leading)
@@ -68,11 +72,11 @@ struct TransactionView: View {
             }
             .padding(15)
         }
-        .navigationTitle("\(editTransaction == nil ? "Add" : "Edit") Transaction")
+        .navigationTitle("\(editTransaction == nil ? ConstantsText_ES.add : ConstantsText_ES.edit) \(ConstantsText_ES.transaction)")
         .background(.gray.opacity(0.15))
         .toolbar() {
             ToolbarItem(placement: .topBarTrailing) {
-                Button("Save", action: save)
+                Button(ConstantsText_ES.save, action: save)
             }
         }
         .onAppear(perform: {

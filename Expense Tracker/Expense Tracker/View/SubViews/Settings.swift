@@ -20,13 +20,13 @@ struct Settings: View {
                 }
                 
                 Section(ConstantsText_ES.appLock) {
-                    Toggle("Enable App Lock", isOn: $isAppLockEnabled)
+                    Toggle(ConstantsText_ES.enableAppLock, isOn: $isAppLockEnabled)
                     if isAppLockEnabled {
-                        Toggle("Lock When App Goes Background", isOn: $lockWhenAppGoesBackground)
+                        Toggle(ConstantsText_ES.enableLockBack, isOn: $lockWhenAppGoesBackground)
                     }
                 }
             }
-            .navigationTitle("Settings")
+            .navigationTitle(ConstantsText_ES.settings)
         }
     }
 }

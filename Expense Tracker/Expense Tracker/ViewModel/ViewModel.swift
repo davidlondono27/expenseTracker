@@ -16,7 +16,7 @@ class ViewModel {
         var error: NSError?
         
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            let reason = "Please authenticate yourself to unlock App"
+            let reason = ConstantsText_ES.authenticateBiometric
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
                 if success {
                     self.isUnlockApp = true

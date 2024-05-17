@@ -24,7 +24,7 @@ struct Graphs: View {
                     
                     ForEach(chartGroups) { group in
                         VStack(alignment: .leading, spacing: 10) {
-                            Text(format(date: group.date, format: "MMM yy")) //TODO: Add text "Tus ingresos/gastos" and MMMM
+                            Text(format(date: group.date, format: "MMMM yy")) //TODO: Add text "Tus ingresos/gastos" and MMMM
                                 .font(.caption)
                                 .foregroundStyle(.gray)
                                 .hSpacing(.leading)
@@ -38,7 +38,7 @@ struct Graphs: View {
                     }
                 }.padding(15)
             }
-            .navigationTitle("Graphs")
+            .navigationTitle(ConstantsText_ES.graphs)
             .background(.gray.opacity(0.15))
             .onAppear {
                 createChartGroup()
@@ -51,11 +51,11 @@ struct Graphs: View {
         Chart {
             ForEach(chartGroups) { group in
                 ForEach(group.categories) { chart in
-                    BarMark(x: .value("Month", format(date: group.date, format: "MMM yy")),
+                    BarMark(x: .value(ConstantsText_ES.month, format(date: group.date, format: "MMMM yy")),
                             y: .value(chart.category.rawValue, chart.totalValue),
                             width: 20
-                    ).position(by: .value("Category", chart.category.rawValue), axis: .horizontal)
-                    .foregroundStyle(by: .value("Category", chart.category.rawValue))
+                    ).position(by: .value(ConstantsText_ES.category, chart.category.rawValue), axis: .horizontal)
+                    .foregroundStyle(by: .value(ConstantsText_ES.category, chart.category.rawValue))
                 }
             }
         }.chartScrollableAxes(.horizontal)
@@ -136,7 +136,7 @@ struct ListOfExpenses: View {
                         }
                     }
                 } header: {
-                    Text("Income")
+                    Text(ConstantsText_ES.income)
                         .font(.caption)
                         .foregroundStyle(.gray)
                         .hSpacing(.leading)
@@ -153,7 +153,7 @@ struct ListOfExpenses: View {
                         }
                     }
                 } header: {
-                    Text("Expense")
+                    Text(ConstantsText_ES.expense)
                         .font(.caption)
                         .foregroundStyle(.gray)
                         .hSpacing(.leading)
@@ -162,7 +162,7 @@ struct ListOfExpenses: View {
             .padding(15)
         }
         .background(.gray.opacity(0.15))
-        .navigationTitle(format(date: month, format: "MMM yy"))
+        .navigationTitle(format(date: month, format: "MMMM yy"))
     }
 }
 

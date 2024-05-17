@@ -26,7 +26,7 @@ struct Recents: View {
                             Button {
                                 showFilterView = true
                             } label: {
-                                Text("\(format(date: startDate, format: "dd - MMM yy")) \(ConstantsText_ES.to) \(format(date: endDate, format: "dd - MMM yy"))")
+                                Text("\(format(date: startDate, format: "dd - MMMM yy")) \(ConstantsText_ES.to) \(format(date: endDate, format: "dd - MMMM yy"))")
                                     .font(.caption2)
                                     .foregroundStyle(.gray)
                             }.hSpacing(.leading)

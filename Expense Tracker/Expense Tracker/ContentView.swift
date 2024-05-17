@@ -21,7 +21,7 @@ struct ContentView: View {
                 HomeApp()
             } else {
                 //TODO: Mejorar UI de LockedView
-                Button("Unlock App", action: authenticate)
+                Button(ConstantsText_ES.unlockApp, action: authenticate)
                     .padding()
                     .background(.blue)
                     .foregroundStyle(.white)
@@ -63,7 +63,7 @@ struct ContentView: View {
         var error: NSError?
         
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
-            let reason = "Please authenticate yourself to unlock App"
+            let reason = ConstantsText_ES.authenticateBiometric
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
                 if success {
                     self.isUnlockApp = true

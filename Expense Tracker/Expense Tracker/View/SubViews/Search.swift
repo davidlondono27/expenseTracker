@@ -30,7 +30,7 @@ struct Search: View {
                 .padding(15)
             }
             .overlay(content: {
-                ContentUnavailableView("Search Transactions", systemImage: "magnifyingglass")
+                ContentUnavailableView(ConstantsText_ES.searchTransactions, systemImage: "magnifyingglass")
                     .opacity(filterText.isEmpty ? 1 : 0)
             })
             .onChange(of: searchText, { oldValue, newValue in
@@ -43,7 +43,7 @@ struct Search: View {
                 filterText = text
             })
             .searchable(text: $searchText)
-            .navigationTitle("Search")
+            .navigationTitle(ConstantsText_ES.search)
             .background(.gray.opacity(0.15))
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -60,7 +60,7 @@ struct Search: View {
                 selectedCategory = nil
             } label: {
                 HStack {
-                    Text("Both")
+                    Text(ConstantsText_ES.both)
                     if selectedCategory == nil {
                         Image(systemName: "checkmark")
                     }

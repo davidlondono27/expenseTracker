@@ -27,7 +27,7 @@ struct TransactionCardView: View {
                     Text(transaction.remarks)
                         .font(.caption)
                         .foregroundStyle(Color.primary.secondary)
-                    Text(format(date: transaction.dateAdded, format: "dd MMM yyyy"))
+                    Text(format(date: transaction.dateAdded, format: "dd MMMM yyyy"))
                         .font(.caption2)
                         .foregroundStyle(.gray)
                     if showsCategory {
