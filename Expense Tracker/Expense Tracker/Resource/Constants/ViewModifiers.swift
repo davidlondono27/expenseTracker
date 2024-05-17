@@ -37,7 +37,17 @@ extension View {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
         formatter.maximumFractionDigits = allowedDigits
-        
         return formatter.string(from: .init(value: value)) ?? ""
+    }
+    
+    var currencySymbol: String {
+        let locale = Locale.current
+        return locale.currencySymbol ?? ""
+    }
+    
+    func total(_ transactions: [Transaction], category: Category) -> Double {
+        return transactions.filter({ $0.category == category.rawValue }).reduce(Double.zero) { partialResult, transaction in
+            return partialResult + transaction.amount
+        }
     }
 }

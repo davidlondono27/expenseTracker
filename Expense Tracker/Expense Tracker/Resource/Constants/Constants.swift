@@ -27,6 +27,9 @@ class ConstantsText_ES {
     static let to = "a"
     static let income = "Ingresos"
     static let expense = "Gastos"
+    static let userName = "Nombre"
+    static let nameTip = "Cuál es tu nombre?"
+    static let appLock = "Seguridad de la App"
 }
 
 class ConstantsText_EN {
@@ -46,4 +49,7 @@ class ConstantsText_EN {
     static let to = "to"
     static let income = "Income"
     static let expense = "Expense"
+    static let userName = "User Name"
+    static let nameTip = "What's your name?"
+    static let appLock = "App Security"
 }
